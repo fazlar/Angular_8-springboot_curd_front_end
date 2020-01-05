@@ -1,0 +1,46 @@
+
+<div>
+<h3  style="text-align: center;margin-bottom: 45px;">Catagory  Zone</h3>
+<div class="row">
+  
+    <div class="col-md-4">
+      <h4  style="text-align: center;">Add Catagory</h4>
+    <form #pForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        
+        <input type="hidden"  class="form-control" id="catagoryId" required [(ngModel)]="catagory.id" name="catagoryId">
+      </div>
+      <div class="form-group">
+        <label for="name">Catagory Name</label>
+        <input type="text" class="form-control" id="catagoryName" required [(ngModel)]="catagory.catagoryName" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" name="catagoryName">
+        <small class="text-danger" [class.d-none]="name.valid || name.untouched">field is required</small>
+      </div>
+      
+      <button type="submit"   class="btn btn-success">Submit</button>
+    </form>
+</div>
+<div class="col-md-8">
+  <h4  style="text-align: center;">Catagory List</h4>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>CatagoryId</th>
+            <th>CatagoryName</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let catagorys of allcatagory | async">
+            <td>{{catagorys.id}}</td>
+            <td>{{catagorys.catagoryName}}</td>
+            
+            <td>
+              <button (click)="deleteCatagory(catagorys.id)"  class="btn btn-danger" >Delete</button>
+              <button (click)=" updatecatagory(catagorys.id)" class="btn btn-success" style="margin-left: 10px">Update</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

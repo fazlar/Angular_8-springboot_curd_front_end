@@ -1,0 +1,58 @@
+<h3  style="text-align: center;">Update product</h3>
+<h4>{{message}}</h4>
+<div [hidden]="submitted" style="width: 500px; margin: auto;">
+  <form >
+    <div class="row">
+      <div  class="col-md-6">
+        <div class="form-group">
+          <label for="name">Product Id</label>
+          <input type="text" class="form-control" id="pid" required [(ngModel)]="product.id" name="producid">
+        </div>
+      </div>
+      <div  class="col-md-6">
+        <div class="form-group">
+          <label for="name">Product Name</label>
+          <input type="text" class="form-control" id="pName" required [(ngModel)]="product.productName" name="productName">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div  class="col-md-6">
+        <div class="form-group">
+          <label for="name">Product catagory</label>
+          <input type="text" class="form-control" id="catagoryName" required [(ngModel)]="product.catagoryName" name="catagoryName">
+        </div>
+      </div>
+      <div  class="col-md-6">
+        <div class="form-group">
+          <label for="name">Product Qty</label>
+          <input type="text" class="form-control" id="pQty" required [(ngModel)]="product.productQty" name="productQty">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div  class="col-md-6">
+        <div class="form-group">
+          <label for="name">product Price</label>
+          <input type="text" class="form-control" id="pPrice" required [(ngModel)]="product.productPrice" name="productPrice">
+        </div>
+      </div>
+      <div  class="col-md-6">
+        <div class="form-group">
+          <label for="name">Product entyDate</label>
+          <input type="text" class="form-control" id="entryDate" required [(ngModel)]="product.entryDate" name="entryDate">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div  class="col-md-6">
+        
+      </div>
+      <div  class="col-md-6">
+        <div class="form-group">
+          <button type="submit" style="margin-left: -50px;" class="btn btn-success" (click)="updateProduct()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
